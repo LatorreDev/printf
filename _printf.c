@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 			switch (format[counter])
 			{
 				case 'c':
-					putchar(va_arg(stringArray, int));
+					_putchar(va_arg(stringArray, int));
 					break;
 					
 				case 'd':
@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 			}
 			counter++;
 		}
-		putchar(format[counter]);
+		_putchar(format[counter]);
 		counter++;
 	}
 	va_end(stringArray);

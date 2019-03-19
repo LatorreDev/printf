@@ -25,10 +25,10 @@ int _printf(const char *format, ...)
 					break;
 					
 				case 'd':
-					printf("%d",va_arg(stringArray, int));
+					_putchar(va_arg(stringArray, int));
 					break;
 				case 'i':
-					printf("%i",va_arg(stringArray, int));
+					_putchar(va_arg(stringArray, int));
 					break;
 				case 's':
 					s = va_arg(stringArray, char*);
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 						printf("nil");
 						break;
 					}
-					printf("%s", s);
+					_putchar(s);
 					break;
 				default:
 					break;

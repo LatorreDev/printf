@@ -42,9 +42,8 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-			_putchar(format[counter]);
+			nc += _putchar(format[counter]);
 		counter++;
-		++nc;
 	}
 	va_end(stringArray);
 	return (nc);

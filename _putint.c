@@ -6,7 +6,7 @@
  *
  * Return: void
  */
- void _print_int(int num)
+void _print_int(int num)
 {
 if (num < 0)
 {
@@ -15,7 +15,7 @@ if (num < 0)
 }
 
 if (num >= 10)
-{	
+{
 	_print_int((num / 10));
 }
 _putchar(num % 10 + '0');
@@ -28,7 +28,7 @@ _putchar(num % 10 + '0');
  *
  * Return: void
  */
- int _putint(int num)
+int _putint(int num)
 {
 int len = 1;
 int nc = num;
@@ -40,7 +40,7 @@ if (nc < 0)
 	len++;
 }
 while (nc > 10)
-{	
+{
 	nc = nc / 10;
 	len++;
 }

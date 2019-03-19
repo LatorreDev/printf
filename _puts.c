@@ -3,6 +3,8 @@
  * _puts - prints string
  *
  * @str: string to print
+ *
+ * Return: int number of characters printed
  */
 int _puts(char *str)
 {

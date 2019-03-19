@@ -2,14 +2,16 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
-/*
+/**
 * _printf - entry point
+* @format: entry array
+* Return: print the passed info
 */
 int _printf(const char *format, ...)
 {
 	va_list stringArray;
 	unsigned int counter = 0;
-	char* s;
+	char *s;
 	int nc = 0;
 
 	va_start(stringArray, format);
@@ -18,15 +20,13 @@ int _printf(const char *format, ...)
 		if (format[counter] == '%')
 		{
 			counter++;
-			
 			switch (format[counter])
 			{
 				case 'c':
 					_putchar(va_arg(stringArray, int));
 					break;
-					
 				case 'd':
-					nc =_putint(va_arg(stringArray, int));
+					nc = _putint(va_arg(stringArray, int));
 					break;
 				case 'i':
 					nc = _putint(va_arg(stringArray, int));

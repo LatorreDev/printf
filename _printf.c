@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			switch (format[counter])
 			{
 				case 'c':
-					nc +=_putchar(va_arg(stringArray, int));
+					nc += _putchar(va_arg(stringArray, int));
 					break;
 				case 'd':
 					nc += _putint(va_arg(stringArray, int));
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					s = va_arg(stringArray, char*);
-					nc += _puts((s == NULL) ? "" : s);
+					nc += _puts((s == NULL) ? "(null)" : s);
 					break;
 				default:
 					break;
@@ -48,4 +48,3 @@ int _printf(const char *format, ...)
 	va_end(stringArray);
 	return (nc);
 }
-

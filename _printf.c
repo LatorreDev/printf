@@ -36,13 +36,15 @@ int _printf(const char *format, ...)
 					nc += _puts((s == NULL) ? "(null)" : s);
 					break;
 				default:
-					if (format[counter] == '%')
-						nc += _putchar('%');
+					nc += _putchar('%');
+					nc += _putchar(format[counter]);
 					break;
 			}
 		}
 		else
 			nc += _putchar(format[counter]);
+		if (format[counter] == 0)
+			_putchar(0);
 		counter++;
 	}
 	va_end(stringArray);

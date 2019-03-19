@@ -12,18 +12,18 @@ int _printf(const char *format, ...)
 	va_list stringArray;
 	unsigned int counter = 0;
 	char *s;
-	int nc = 0;
+	int nc = 0, c = 0;
 
 	va_start(stringArray, format);
 	while (format != 0 && format[counter] != '\0')
 	{
-		if (format[counter] == '%')
+		if (format[counter] == '%' && format[counter + 1] != '\0')
 		{
 			counter++;
 			switch (format[counter])
 			{
 				case 'c':
-					nc += _putchar(va_arg(stringArray, int));
+					nc += ((c = va_arg(stringArray, int)) == '\0') ? 1 : _putchar(c);
 					break;
 				case 'd':
 					nc += _putint(va_arg(stringArray, int));
@@ -32,8 +32,7 @@ int _printf(const char *format, ...)
 					nc += _putint(va_arg(stringArray, int));
 					break;
 				case 's':
-					s = va_arg(stringArray, char*);
-					nc += _puts((s == NULL) ? "(null)" : s);
+					nc += _puts(((s = va_arg(stringArray, char*)) == NULL) ? "(null)" : s);
 					break;
 				default:
 					nc += _putchar('%');
@@ -42,7 +41,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-			nc += _putchar(format[counter]);
+			nc += (format[counter] == '%') ? -1 : _putchar(format[counter]);
 		if (format[counter] == 0)
 			_putchar(0);
 		counter++;

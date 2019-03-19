@@ -36,8 +36,8 @@ int _printf(const char *format, ...)
 					nc += _puts((s == NULL) ? "(null)" : s);
 					break;
 				default:
-					if (format[counter] == '%')
-						nc += _putchar('%');
+					nc += _putchar('%');
+					nc += _putchar(format[counter]);
 					break;
 			}
 		}

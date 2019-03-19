@@ -43,6 +43,8 @@ int _printf(const char *format, ...)
 		}
 		else
 			nc += _putchar(format[counter]);
+		if (format[counter] == 0)
+			_putchar(0);
 		counter++;
 	}
 	va_end(stringArray);

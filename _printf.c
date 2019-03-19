@@ -36,12 +36,13 @@ int _printf(const char *format, ...)
 					nc += _puts((s == NULL) ? "(null)" : s);
 					break;
 				default:
+					if (format[counter] == '%')
+						nc += _putchar('%');
 					break;
 			}
-
-			counter++;
 		}
-		_putchar(format[counter]);
+		else
+			_putchar(format[counter]);
 		counter++;
 		++nc;
 	}

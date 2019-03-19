@@ -4,7 +4,6 @@
 /*
 * _printf - entry point
 */
-
 int _printf(const char *format, ...)
 {
 	va_list stringArray;

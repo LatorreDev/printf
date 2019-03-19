@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					s = va_arg(stringArray, char*);
-					nc += _puts((s == NULL) ? "" : s);
+					nc += _puts((s == NULL) ? "(null)" : s);
 					break;
 				default:
 					break;
@@ -48,4 +48,3 @@ int _printf(const char *format, ...)
 	va_end(stringArray);
 	return (nc);
 }
-

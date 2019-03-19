@@ -25,19 +25,30 @@ int _printf(const char *format, ...)
 					break;
 					
 				case 'd':
-					printf("%d",va_arg(stringArray, int));
+<<<<<<< HEAD
+					_putchar(va_arg(stringArray, int));
 					break;
 				case 'i':
-					printf("%i",va_arg(stringArray, int));
+					_putchar(va_arg(stringArray, int));
+=======
+					_putint(va_arg(stringArray, int));
+					break;
+				case 'i':
+					_putint(va_arg(stringArray, int));
+>>>>>>> 4b91fa70cb7772df4ef0748e62c13929f9969f9e
 					break;
 				case 's':
 					s = va_arg(stringArray, char*);
 					if (s == NULL || *s == '\0')
 					{
-						printf("nil");
+						_puts("nil");
 						break;
 					}
-					printf("%s", s);
+<<<<<<< HEAD
+					_putchar(s);
+=======
+					_puts(s);
+>>>>>>> 4b91fa70cb7772df4ef0748e62c13929f9969f9e
 					break;
 				default:
 					break;

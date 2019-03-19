@@ -25,10 +25,17 @@ int _printf(const char *format, ...)
 					break;
 					
 				case 'd':
+<<<<<<< HEAD
+					_putchar(va_arg(stringArray, int));
+					break;
+				case 'i':
+					_putchar(va_arg(stringArray, int));
+=======
 					_putint(va_arg(stringArray, int));
 					break;
 				case 'i':
 					_putint(va_arg(stringArray, int));
+>>>>>>> 4b91fa70cb7772df4ef0748e62c13929f9969f9e
 					break;
 				case 's':
 					s = va_arg(stringArray, char*);
@@ -37,7 +44,11 @@ int _printf(const char *format, ...)
 						_puts("nil");
 						break;
 					}
+<<<<<<< HEAD
+					_putchar(s);
+=======
 					_puts(s);
+>>>>>>> 4b91fa70cb7772df4ef0748e62c13929f9969f9e
 					break;
 				default:
 					break;

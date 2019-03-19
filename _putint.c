@@ -14,7 +14,7 @@ if (num < 0)
 	_putchar('-');
 }
 
-if (num > 10)
+if (num >= 10)
 {	
 	_print_int((num / 10));
 }

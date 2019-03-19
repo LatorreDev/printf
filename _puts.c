@@ -17,7 +17,5 @@ while (*str != '\0')
 	str++;
 	i++;
 }
-if (i > 0)
-	i--;;
 return (i);
 }

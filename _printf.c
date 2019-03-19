@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	va_list stringArray;
 	unsigned int counter = 0;
 	char* s;
+	int nc = 0;
 
 	va_start(stringArray, format);
 	while (format != 0 && format[counter] != '\0')
@@ -25,28 +26,24 @@ int _printf(const char *format, ...)
 					break;
 					
 				case 'd':
-					_putint(va_arg(stringArray, int));
+					nc =_putint(va_arg(stringArray, int));
 					break;
 				case 'i':
-					_putint(va_arg(stringArray, int));
+					nc = _putint(va_arg(stringArray, int));
 					break;
 				case 's':
 					s = va_arg(stringArray, char*);
-					if (s == NULL || *s == '\0')
-					{
-						_puts("nil");
-						break;
-					}
-					_puts(s);
+					nc = _puts((s == NULL) ? "" : s);
 					break;
 				default:
 					break;
 			}
+
 			counter++;
 		}
 		_putchar(format[counter]);
 		counter++;
 	}
 	va_end(stringArray);
-	return (counter);
+	return (nc);
 }

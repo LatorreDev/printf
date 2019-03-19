@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <limits.h>
 /**
  * _print_int - prints integers using _putchar
  *
@@ -8,17 +9,19 @@
  */
 void _print_int(int num)
 {
-if (num < 0)
+long n = 0;
+n = n + num;
+if (n < 0)
 {
-	num = num * -1;
+	n = n * -1;
 	_putchar('-');
 }
 
-if (num >= 10)
+if (n >= 10)
 {
-	_print_int((num / 10));
+	_print_int((n / 10));
 }
-_putchar(num % 10 + '0');
+_putchar(n % 10 + '0');
 }
 
 /**

@@ -1,15 +1,16 @@
+
 #include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
 /*
 * _printf - entry point
 */
-
 int _printf(const char *format, ...)
 {
 	va_list stringArray;
 	unsigned int counter = 0;
 	char* s;
+	int nc = 0;
 
 	va_start(stringArray, format);
 	while (format != 0 && format[counter] != '\0')
@@ -25,39 +26,25 @@ int _printf(const char *format, ...)
 					break;
 					
 				case 'd':
-<<<<<<< HEAD
-					_putchar(va_arg(stringArray, int));
+					nc =_putint(va_arg(stringArray, int));
 					break;
 				case 'i':
-					_putchar(va_arg(stringArray, int));
-=======
-					_putint(va_arg(stringArray, int));
-					break;
-				case 'i':
-					_putint(va_arg(stringArray, int));
->>>>>>> 4b91fa70cb7772df4ef0748e62c13929f9969f9e
+					nc = _putint(va_arg(stringArray, int));
 					break;
 				case 's':
 					s = va_arg(stringArray, char*);
-					if (s == NULL || *s == '\0')
-					{
-						_puts("nil");
-						break;
-					}
-<<<<<<< HEAD
-					_putchar(s);
-=======
-					_puts(s);
->>>>>>> 4b91fa70cb7772df4ef0748e62c13929f9969f9e
+					nc = _puts((s == NULL) ? "" : s);
 					break;
 				default:
 					break;
 			}
+
 			counter++;
 		}
 		_putchar(format[counter]);
 		counter++;
 	}
 	va_end(stringArray);
-	return (counter);
+	return (nc);
 }
+

@@ -34,7 +34,8 @@ _putchar(n % 10 + '0');
 int _putint(int num)
 {
 int len = 1;
-int nc = num;
+long nc = 0;
+nc = num;
 _print_int(num);
 
 if (nc < 0)

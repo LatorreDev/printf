@@ -7,9 +7,9 @@
  *
  * Return: void
  */
-void _print_int(int num)
+void _print_int(double num)
 {
-long long n = 0;
+double n = 0;
 n = n + num;
 if (n < 0)
 {
@@ -21,7 +21,7 @@ if (n >= 10)
 {
 	_print_int((n / 10));
 }
-_putchar(n % 10 + '0');
+_putchar((int)n % 10 + '0');
 }
 
 /**
@@ -34,9 +34,9 @@ _putchar(n % 10 + '0');
 int _putint(int num)
 {
 int len = 1;
-long long nc = 0;
+double nc = 0;
 nc = num;
-_print_int(num);
+_print_int(nc);
 
 if (nc < 0)
 {

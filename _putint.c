@@ -10,18 +10,25 @@
 void _print_int(double num)
 {
 double n = 0;
+int test = INT_MIN;
 n = n + num;
-if (n < 0)
+if (n < 0 && num != test)
 {
 	n -= n * 2;
 	_putchar('-');
 }
 
-if (n >= 10)
+if (n >= 10 && num != test)
 {
 	_print_int((n / 10));
 }
-_putchar((int)n % 10 + '0');
+if (num == test)
+{
+	_puts("-2147483648");
+}
+if (num != test)
+	_putchar((int)n % 10 + '0');
+
 }
 
 /**

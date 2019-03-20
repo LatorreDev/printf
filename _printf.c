@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
-#define N "(NULL)"
+#define N "(null)"
 /**
  * _printf - entry point
  * @format: entry array

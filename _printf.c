@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 					nc += _putint(va_arg(stringArray, int));
 					break;
 				case 's':
-					nc += ((s = va_arg(stringArray, char*)) == NULL) ? "(null)" : _puts(s);
+					nc += ((s = va_arg(stringArray, char*)) == NULL) ? _puts("(null)") : _puts(s);
 					break;
 				default:
 					nc += _putchar('%');

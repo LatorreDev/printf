@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 va_list stringArray;
 unsigned int counter = 0;
 char *s;
-int nc = 0, c = 0;
+int nc = 0;
 
 va_start(stringArray, format);
 while (format != 0 && format[counter] != '\0')
@@ -23,7 +23,7 @@ while (format != 0 && format[counter] != '\0')
 		switch (format[counter])
 		{
 			case 'c':
-				nc += ((c = va_arg(stringArray, int)) == '\0') ? 1 : _putchar(c);
+				nc += _putchar(va_arg(stringArray, int));
 				break;
 			case 'd':
 				nc += _putint(va_arg(stringArray, int));

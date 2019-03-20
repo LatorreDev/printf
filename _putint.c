@@ -13,7 +13,7 @@ long n = 0;
 n = n + num;
 if (n < 0)
 {
-	n = n * -1;
+	n -= n * 2;
 	_putchar('-');
 }
 
@@ -40,7 +40,7 @@ _print_int(num);
 
 if (nc < 0)
 {
-	nc = nc * -1;
+	nc -= nc * 2;
 	len++;
 }
 while (nc > 10)

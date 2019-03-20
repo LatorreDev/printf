@@ -9,7 +9,7 @@
  */
 void _print_int(int num)
 {
-long n = 0;
+long long n = 0;
 n = n + num;
 if (n < 0)
 {
@@ -34,7 +34,7 @@ _putchar(n % 10 + '0');
 int _putint(int num)
 {
 int len = 1;
-long nc = 0;
+long long nc = 0;
 nc = num;
 _print_int(num);
 
@@ -48,5 +48,6 @@ while (nc > 10)
 	nc = nc / 10;
 	len++;
 }
+
 return (len);
 }

@@ -1,4 +1,3 @@
-
 #include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
@@ -32,11 +31,11 @@ int _printf(const char *format, ...)
 					nc += _putint(va_arg(stringArray, int));
 					break;
 				case 's':
-					nc += _puts(((s = va_arg(stringArray, char*)) == NULL) ? "(null)" : s);
+					nc += ((s = va_arg(stringArray, char*)) == NULL) ? "(null)" : _puts(s);
 					break;
 				default:
 					nc += _putchar('%');
-					nc += _putchar(format[counter]);
+					nc += (format[counter] == '%') ? 0 : _putchar(format[counter]);
 					break;
 			}
 		}
@@ -47,5 +46,5 @@ int _printf(const char *format, ...)
 		counter++;
 	}
 	va_end(stringArray);
-	return (nc);
+	return ((nc == 0) ? -1 : nc);
 }
